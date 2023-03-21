@@ -1,0 +1,39 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  width: 20%;
+  min-width: 6rem;
+  background-color: lightgray;
+}
+
+.listItem {
+  margin-left: 2em;
+  margin-top: 1em;
+}
+
+ul.leftList {
+  list-style-type: none;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-left: 1em;
+}
+
+.randomButton {
+  align-self: center;
+  width: 80%;
+  margin: 3em 1em 2em;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-weight: 600;
+  background-color: white;
+}
+
+.randomButton:hover {
+  background-color: gray;
+  cursor: pointer;
+}

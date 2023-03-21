@@ -1,0 +1,37 @@
+
+
+.item {
+    /* width: calc(22% - 16px);
+     */
+    /* 4 items per row on desktop */
+    margin-left: 10vw; /* handle this programmatically? */
+    height: 100%;
+    width: 100%;
+    /* margin-right: 16px; */
+    /* margin-bottom: 24px; */
+}
+
+/* @media (max-width: 768px) {
+    .item {
+        width: calc(40% - 16px);
+        # 2 items per row on mobile
+    }
+} */
+
+.topSection {
+    height: 80%;
+    width: 80%;
+}
+
+.bottomSection {
+    height: 20%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    margin: 0;
+    text-align: center;
+}

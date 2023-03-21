@@ -1,5 +1,5 @@
-export const hexToDecimal = (hex: string) => parseInt(hex, 16);
-export const decimalToHex = (decimal: number) => {
+export const hexToDecimal = (hex: string): number => parseInt(hex, 16);
+export const decimalToHex = (decimal: number): string => {
   let hex = decimal.toString(16).toUpperCase();
   if (hex.length === 1) {
     hex = `0${hex}`;
@@ -34,4 +34,29 @@ export const genColor = (seed: number): rbgColor => {
     blue: b,
   };
   return res;
+};
+
+const min = (val: number, min: number): number => (val < min ? min : val);
+const max = (val: number, max: number): number => (val > max ? max : val);
+
+export const clampRGB = (minVal: number, maxVal: number, val: number) => {
+  let res = min(val, minVal);
+  res = max(res, maxVal);
+  return res;
+};
+
+export const adjustShade = (color: string, lighter: boolean = true): string => {
+  const adjustment = lighter ? 1.1 : 0.9;
+
+  const r = decimalToHex(
+    clampRGB(0, 255, Math.round(hexToDecimal(color[0] + color[1]) * adjustment))
+  );
+  const g = decimalToHex(
+    clampRGB(0, 255, Math.round(hexToDecimal(color[2] + color[3]) * adjustment))
+  );
+  const b = decimalToHex(
+    clampRGB(0, 255, Math.round(hexToDecimal(color[4] + color[5]) * adjustment))
+  );
+
+  return `${r}${g}${b}`;
 };

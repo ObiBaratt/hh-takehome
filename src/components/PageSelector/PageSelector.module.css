@@ -1,0 +1,18 @@
+.pageItem {
+  margin: 0.25rem;
+  font-size: larger;
+  cursor: pointer;
+}
+
+.activePage {
+  margin: 0.25rem;
+  text-decoration: underline;
+  font-weight: bolder;
+  font-size: larger;
+  cursor: pointer;
+}
+
+.pages {
+  display: flex;
+  justify-content: center;
+}

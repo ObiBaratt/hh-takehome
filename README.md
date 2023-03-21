@@ -1,38 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BASIC BREAKDOWN
 
-## Getting Started
+# Components:
 
-First, run the development server:
+1. Header/Top Bar:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+   - Logo: Link to "/"
+   - Search Bar: Which will do something maybe
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. LeftNav:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+   - Random Color
+     - Get random color page and redir to the DetailViewPage
+   - List of basic colors
+     - Links to basic color DetailViewPages OR ListViewPages filtered for that color
+   - Responsive to a collapsed bar with an expand button (just use ">" for the icon)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+3. ColorBoxItems:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+   - Big box of the color, some shadow, white bottom with the color hex code displayed
+   - Each Item is a Link to its DetailViewPage
+   - Need height/width props / defaults
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. PageGrid:
 
-## Learn More
+   - Default: 3 rows, 4 cols
+   - Responsive to 2x2
 
-To learn more about Next.js, take a look at the following resources:
+5. Page Selector:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   - Goes from 1 - max pages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+6. Row:
+   - Input: hex code string
+   - display a row of 5 on desktop shinking on mobile
+   - Calculate the different shades based on: helpers/adjustShade
 
-## Deploy on Vercel
+# Pages:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Document:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   - Header/TopBar
+   - LeftNav
+
+1. ListViewPage:
+   https://raw.githubusercontent.com/HelpfulHuman/interview-challenge/master/design/List%20View.png
+
+   - PageGrid of ColorBoxItems
+
+1. DetailViewPage
+   https://raw.githubusercontent.com/HelpfulHuman/interview-challenge/master/design/Detail%20View.png
+   - Main Large Color
