@@ -1,4 +1,5 @@
 export const hexToDecimal = (hex: string): number => parseInt(hex, 16);
+
 export const decimalToHex = (decimal: number): string => {
   let hex = decimal.toString(16).toUpperCase();
   if (hex.length === 1) {
@@ -59,4 +60,13 @@ export const adjustShade = (color: string, lighter: boolean = true): string => {
   );
 
   return `${r}${g}${b}`;
+};
+
+export const genShadeRow = (color: string): string[] => {
+  const light1 = adjustShade(color);
+  const light2 = adjustShade(light1);
+  const dark1 = adjustShade(color, false);
+  const dark2 = adjustShade(dark1, false);
+
+  return [dark2, dark1, color, light1, light2];
 };

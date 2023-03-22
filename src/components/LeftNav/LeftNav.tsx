@@ -4,14 +4,14 @@ import { useRouter } from "next/router";
 import styles from "./LeftNav.module.css";
 
 const colors = [
-  { name: "Red", hex: "FF0000" },
-  { name: "Orange", hex: "FFA500" },
-  { name: "Yellow", hex: "FFFF00" },
-  { name: "Green", hex: "008000" },
-  { name: "Blue", hex: "0000FF" },
-  { name: "Purple", hex: "800080" },
-  { name: "Brown", hex: "A52A2A" },
-  { name: "Gray", hex: "808080" },
+  { name: "Red", id: 60 },
+  { name: "Orange", id: 84 },
+  { name: "Yellow", id: 2 },
+  { name: "Green", id: 9 },
+  { name: "Blue", id: 3 },
+  { name: "Purple", id: 59 },
+  { name: "Brown", id: 21 },
+  { name: "Gray", id: 95 },
 ];
 
 const LeftNav: React.FC = () => {
@@ -31,7 +31,7 @@ const LeftNav: React.FC = () => {
         {colors.map((color) => {
           return (
             <li key={color.name} className={styles.leftList}>
-              <Link href={`/details/${color.hex}`}>{color.name}</Link>
+              <Link href={`/details/${color.id}`}>{color.name}</Link>
             </li>
           );
         })}

@@ -1,37 +1,29 @@
-
-
 .item {
-    /* width: calc(22% - 16px);
-     */
-    /* 4 items per row on desktop */
-    margin-left: 10vw; /* handle this programmatically? */
-    height: 100%;
-    width: 100%;
-    /* margin-right: 16px; */
-    /* margin-bottom: 24px; */
-}
+  margin: 5%;
+  height: fit-content;
+  width: 100%;
+  min-width: 10rem;
+  border: 3px solid rgb(230, 219, 219);
+  border-radius: 8px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 
-/* @media (max-width: 768px) {
-    .item {
-        width: calc(40% - 16px);
-        # 2 items per row on mobile
-    }
-} */
-
-.topSection {
-    height: 80%;
-    width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .bottomSection {
-    height: 20%;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 20%;
+  min-height: 2rem;
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 1rem;
 }
 
 .text {
-    margin: 0;
-    text-align: center;
+  margin: 0;
+  text-align: center;
 }

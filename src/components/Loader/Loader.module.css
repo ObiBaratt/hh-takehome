@@ -1,0 +1,55 @@
+.wrapper {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  perspective: 500px;
+}
+
+.line {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  animation: 2s linear infinite;
+}
+
+.line:nth-child(1) {
+  border-bottom: 10px solid #afff00;
+  filter: drop-shadow(0 0 5px #d5ff7a);
+  transform: rotateX(35deg) rotateY(-45deg);
+  animation-name: one;
+}
+
+.line:nth-child(2) {
+  border-right: 10px solid #00afff;
+  filter: drop-shadow(0 0 5px #60cdff);
+  transform: rotateX(50deg) rotateY(10deg);
+  animation-name: two;
+}
+
+.line:nth-child(3) {
+  border-top: 10px solid #ff00af;
+  filter: drop-shadow(0 0 5px #ff60cd);
+  transform: rotateX(35deg) rotateY(55deg);
+  animation-name: three;
+}
+
+@keyframes one {
+  to {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+  }
+}
+
+@keyframes two {
+  to {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+  }
+}
+
+@keyframes three {
+  to {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+  }
+}

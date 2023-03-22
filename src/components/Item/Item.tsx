@@ -1,13 +1,22 @@
 import styles from "./Item.module.css";
 
 interface Props {
-  hex: string
+  hex: string;
+  height: number;
+  width: number;
+  detail?: boolean;
 }
 
-const Item: React.FC<Props> = ({hex}) => {
+const Item: React.FC<Props> = ({ hex, height, width, detail }) => {
   return (
-    <div className={styles.item}>
-      <div className={styles.topSection} style={{ backgroundColor: `#${hex}` }} />
+    <div
+      className={styles.item}
+      style={{
+        backgroundColor: `#${hex}`,
+        minHeight: `${height}vh`,
+        minWidth: `${width}vw`,
+      }}
+    >
       <div className={styles.bottomSection}>
         <p className={styles.text}>{`#${hex}`}</p>
       </div>
