@@ -59,7 +59,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: { params: { id: string } }) {
   const res = await fetch(
-    `http://localhost:3000/api/colors?id=${context.params.id}`
+    `https://hh-takehome.vercel.app/api/colors?id=${context.params.id}`
   );
   const data = await res.json();
   return {
