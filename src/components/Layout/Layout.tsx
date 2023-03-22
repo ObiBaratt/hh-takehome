@@ -2,7 +2,7 @@ import LeftNav from "../LeftNav/LeftNav";
 import Header from "../Header/Header";
 import styles from "./Layout.module.css";
 
-const Layout: React.FC = ({ children }) => {
+const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <div className={styles.layout}>
       <Header />
