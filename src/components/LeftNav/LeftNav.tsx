@@ -1,6 +1,8 @@
 import { TOTAL_ENTRIES } from "@/src/lib/constants";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useState } from "react";
+import Loader from "../Loader/Loader";
 import styles from "./LeftNav.module.css";
 
 const colors = [
@@ -15,6 +17,8 @@ const colors = [
 ];
 
 const LeftNav: React.FC = () => {
+  const [show, setShow] = useState<boolean>(false);
+
   const router = useRouter();
 
   const handleButton = () => {
@@ -35,6 +39,21 @@ const LeftNav: React.FC = () => {
             </li>
           );
         })}
+
+        <button
+          className={styles.randomButton}
+          onClick={() => {
+            setShow(!show);
+          }}
+        >
+          Click here to see the loader.
+        </button>
+
+        {show && (
+          <div>
+            <Loader />
+          </div>
+        )}
       </ul>
     </nav>
   );
